@@ -24,7 +24,7 @@ with
             country,
             rider,
             team,
-            duracao,
+            nullif(duracao, '') duracao,
             cast(nullif(split_part(duracao, 'h', 1), '') as integer) horas_duracao,
             cast(nullif(split_part(replace(duracao, 'm', ' '), ' ', 2), '') as integer) minutos_duracao,
             cast(nullif(split_part(replace(duracao, 's', ' '), ' ', 3), '') as integer) segundos_duracao,
@@ -60,7 +60,7 @@ with
             cast(nullif(split_part(height, 'm', 1), '') as float) height_m,
             cast(nullif(split_part(weight, 'kg', 1), '') as float) weight_kg,
             to_date(born, 'YYYY-MM-DD') born,
-            to_date(died, 'YYYY-MM-DD') died
+            to_date(nullif(died, ''), 'YYYY-MM-DD') died
         from
             base
     )

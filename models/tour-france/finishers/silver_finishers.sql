@@ -5,7 +5,6 @@ with
             rank as classificacao,
             rider,
             time as duracao,
-            -- replace(time, '+ ', '') as duracao,
             team
         FROM 
             {{ ref('tb_finishers') }}

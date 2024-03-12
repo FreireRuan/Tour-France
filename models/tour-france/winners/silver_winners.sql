@@ -15,7 +15,7 @@ with
             born,
             died
         FROM
-            "tour_france"."public"."tb_winners"
+            {{ ref('tb_winners') }}
     ),
 
     base_trat as (

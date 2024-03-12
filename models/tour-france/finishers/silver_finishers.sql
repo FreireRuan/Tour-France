@@ -7,7 +7,7 @@ with
             time as duracao,
             team
         FROM 
-            tb_finishers
+            {{ ref('tb_finishers') }}
     ),
 
     base_trat as (

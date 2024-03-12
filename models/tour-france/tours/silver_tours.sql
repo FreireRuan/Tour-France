@@ -44,7 +44,7 @@ with
             starters,
             finishers
         FROM
-            "tour_france"."public"."tb_tours"
+            {{ ref('tb_tours') }}
     )
 
 select

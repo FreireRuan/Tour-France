@@ -7,7 +7,7 @@ with
             time as duracao,
             team
         FROM 
-            {{ ref('tb_finishers') }}
+            "tour_france"."public"."tb_finishers"
     ),
 
     base_trat as (
@@ -22,13 +22,13 @@ with
     )
 
 select
-    ano,
-    classificacao,
+    cast(ano as integer) ano,
+    cast(classificacao as integer) classificacao,
     rider,
-    duracao,
-    split_part(duracao, 'h', 1) as horas,
-    replace(split_part(duracao, ' ', 2), '''', '') as minutos,
-    replace(split_part(duracao, ' ', 3), '"', '') as segundos,
-    team
+    nullif(duracao, ''),
+    cast(nullif(split_part(duracao, 'h', 1), '') as integer) as horas,
+    cast(nullif(replace(split_part(duracao, ' ', 2), '''', ''), '') as integer) as minutos,
+    cast(nullif(replace(split_part(duracao, ' ', 3), '"', ''), '') as integer) as segundos,
+    nullif(team, '') team
 from
     base_trat

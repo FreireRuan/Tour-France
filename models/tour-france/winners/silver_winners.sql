@@ -5,7 +5,7 @@ with
             country,
             rider,
             team,
-            nullif(time, '') duracao,
+            time duracao,
             margin,
             stages_won,
             stages_led,
@@ -55,7 +55,7 @@ with
                     end, 'm', '') 
                 as integer) as segundos_margin,
             cast(stages_won as integer) stages_won, 
-            cast(stages_led as integer) stages_led,
+            cast(nullif(stages_led, '') as integer) stages_led,
             cast(nullif(split_part(avg_speed, 'km/h', 1), '') as float) avg_speed_km_h,
             cast(nullif(split_part(height, 'm', 1), '') as float) height_m,
             cast(nullif(split_part(weight, 'kg', 1), '') as float) weight_kg,

@@ -2,16 +2,19 @@ with
 
     base as (
         select
-            year ano,
-            date data,
+            cast(year as integer) ano,
+            to_date(date, 'YYYY-MM-DD') data,
             stage,
             course,
-            split_part(distance, '(', 1) distance_km,
-            replace(replace(split_part(distance, ' ', 2), '(', ''), ')', '') distance_mi,
+            split_part(split_part(distance, '(', 1), 'km', 1) distance_km,
+            split_part(replace(replace(split_part(distance, ' ', 2), '(', ''), ')', ''), 'mi', 1) distance_mi,
             type,
             split_part(winner, '(', 1) winner
         from
             "tour_france"."public"."tb_stages"
     )
 
-    select * from base
+    select 
+        * 
+    from 
+        base

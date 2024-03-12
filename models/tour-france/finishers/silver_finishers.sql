@@ -25,7 +25,7 @@ select
     cast(ano as integer) ano,
     cast(classificacao as integer) classificacao,
     rider,
-    nullif(duracao, ''),
+    nullif(duracao, '') duracao,
     cast(nullif(split_part(duracao, 'h', 1), '') as integer) as horas,
     cast(nullif(replace(split_part(duracao, ' ', 2), '''', ''), '') as integer) as minutos,
     cast(nullif(replace(split_part(duracao, ' ', 3), '"', ''), '') as integer) as segundos,

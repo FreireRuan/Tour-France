@@ -11,7 +11,7 @@ with
             type,
             split_part(winner, '(', 1) winner
         from
-            "tour_france"."public"."tb_stages"
+            {{ ref('tb_stages') }}
     )
 
     select 

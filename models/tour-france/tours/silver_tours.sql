@@ -48,12 +48,12 @@ with
     )
 
 select
-    ano,
+    cast(ano as integer) ano,
     dates,
     to_date(dia_inicio || ' ' || mes_inicio || ' ' || ano_inicio_fim, 'DD Month YYYY') data_inicio,
     to_date(dia_fim || ' ' || mes_fim || ' ' || ano_inicio_fim, 'DD Month YYYY') data_fim,
     stages,
-    starters,
-    finishers
+    cast(starters as integer) starters,
+    cast(finishers as integer) finishers
 from
     base

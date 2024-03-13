@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: sources
+    database: tour_france
+    schema: public
+    tables:
+      - name: tb_winners
+      - name: tb_tours
+      - name: tb_stages
+      - name: tb_finishers

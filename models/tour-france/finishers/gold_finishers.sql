@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='table'
+    )
+}}
+
 select
     row_number() over() id_finishers,
     f.*,

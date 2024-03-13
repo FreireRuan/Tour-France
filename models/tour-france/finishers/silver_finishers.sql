@@ -48,16 +48,16 @@ select
             when position('''' in duracao) = 4 then split_part(duracao, '''', 1)
         end
     as integer) minutos,
-    case
-        when replace(split_part(duracao, ' ', 3), '"', '') != '' then replace(replace(split_part(duracao, ' ', 3), '"', ''), '''', '')
-        when position('h' in duracao) = 2 then split_part(replace(replace(duracao, '"', ' '), '''', ' '), ' ', 3)
-        when position('h' in duracao) = 3 then split_part(replace(replace(duracao, '"', ' '), '''', ' '), ' ', 3)
-        when position('''' in duracao) = 4 then split_part(replace(replace(duracao, '''', ''), '"', ' '), ' ', 2)
-        when position('"' in duracao) = 2 then split_part(duracao, '"', 1)
-        when position('"' in duracao) = 3 then split_part(duracao, '"', 1)
-        when position('''' in duracao) = 2 then split_part(replace(duracao, '"', ' '), ' ', 2)
-        when position('''' in duracao) = 3 then split_part(replace(duracao, '"', ' '), ' ', 2)
-    end segundos,
+        case
+            when position('h' in duracao) = 2 then cast(split_part(replace(replace(duracao, '"', ' '), '''', ' '), ' ', 2) as integer)
+            when position('h' in duracao) = 3 then cast(split_part(replace(replace(duracao, '"', ' '), '''', ' '), ' ', 2) as integer)
+            when position('h' in duracao) = 4 then cast(split_part(replace(replace(duracao, '"', ' '), '''', ' '), ' ', 2) as integer)
+            when position('''' in duracao) = 2 then cast(split_part(replace(replace(duracao, '"', ' '), '''', ' '), ' ', 1) as integer)
+            when position('''' in duracao) = 3 then cast(split_part(replace(replace(duracao, '"', ' '), '''', ' '), ' ', 1) as integer)
+            when position('''' in duracao) = 4 then cast(split_part(replace(replace(duracao, '"', ' '), '''', ' '), ' ', 1) as integer)
+            when position('"' in duracao) = 2 then cast(split_part(duracao, '"', 1) as integer)
+            when position('"' in duracao) = 3 then cast(split_part(duracao, '"', 1) as integer)
+        end segundos,
     nullif(team, '') team
 from
     base_trat

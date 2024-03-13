@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='table'
+    )
+}}
+
 select 
     row_number() over(order by w.ano) id_winner,
     w.*,

@@ -1,4 +1,4 @@
 SELECT
     *
 FROM
-    "tour_france"."public"."tb_winners"
+    {{source('sources','tb_winners')}}

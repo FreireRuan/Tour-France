@@ -101,7 +101,7 @@ Para acessar a documentação completa do dashboard, por favor, clique [aqui](da
 
 O projeto apresenta diversos pontos positivos que contribuem para sua eficácia e utilidade:
 
-- **Estruturação dos Dados:** A utilização do DBT permite uma modelagem eficiente dos dados, facilitando a análise e visualização no Power BI. A separação em camadas lógicas proporciona uma organização clara e flexível dos dados.
+- **Estruturação dos Dados:** A utilização do DBT permite uma modelagem eficiente dos dados, facilitando a análise e visualização no Power BI. A separação em camadas lógicas junto a modelagem Star Schema proporciona uma organização clara e flexível dos dados.
 
 - **Conexão com o Power BI:** O uso do Power BI como ferramenta de visualização permite a criação de dashboards interativos e intuitivos. A integração com o DBT simplifica o processo de obtenção e atualização dos dados, garantindo a consistência e precisão das análises.
 
@@ -109,12 +109,12 @@ O projeto apresenta diversos pontos positivos que contribuem para sua eficácia 
 
 ### 4.2 Possíveis Melhorias
 
-Apesar dos pontos positivos, há algumas áreas que podem ser aprimoradas para aumentar a eficiência e qualidade do projeto:
+Dado que este é um projeto piloto, há alguns aspectos que precisam ser finalizados. Apesar dos aspectos positivos já evidentes, existem áreas que demandam melhorias para potencializar a eficiência e qualidade do projeto:
 
 - **Testes Automatizados no DBT:** A inclusão de testes automatizados no DBT seria fundamental para garantir a qualidade dos dados e a integridade das transformações. Testes de validação de esquema, integridade referencial e lógica de negócios ajudariam a evitar erros e inconsistências nos dados processados.
 
 - **Governança de Dados:** A implementação de hooks no DBT para governança de dados seria benéfica para aplicar políticas de qualidade e conformidade aos dados. Isso inclui validação de formatos, detecção de valores ausentes ou inválidos e aplicação de regras de negócios específicas.
 
-- **Monitoramento e Rastreabilidade:** Apesar te conter a Lineage, a utilização das funcionalidades de logs do DBT permitiria rastrear e monitorar as transformações dos dados, proporcionando uma visão detalhada do processo. Isso facilitaria a identificação de falhas, otimização de desempenho e auditoria das operações realizadas.
+- **Monitoramento e Rastreabilidade:** Apesar de conter a Lineage, a utilização das funcionalidades de logs do DBT permitiria rastrear e monitorar as transformações dos dados, proporcionando uma visão detalhada do processo. Isso facilitaria a identificação de falhas, otimização de desempenho e auditoria das operações realizadas.
 
 - **Agendamento Automatizado:** A implementação de um scheduler no DBT ou em uma ferramenta como Airflow permitiria automatizar as tarefas de processamento e atualização dos dados. Isso garantiria a atualização regular do dashboard e a disponibilidade de informações em tempo hábil para os usuários.

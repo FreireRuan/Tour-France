@@ -91,7 +91,13 @@ O processo de construção do dashboard segue a seguinte arquitetura:
 - **segundos:** Segundos de duração da corrida
 - **team:** Equipe do ciclista
 
-## 3. Conclusão e Possíveis Melhorias
+## 3. Documentação do Dashboard
+
+Nesta seção, você encontrará informações detalhadas sobre os principais insights obtidos por meio do dashboard.
+
+Para acessar a documentação completa do dashboard, por favor, clique [aqui](dataviz).
+
+## 4. Conclusão e Possíveis Melhorias
 
 O projeto apresenta diversos pontos positivos que contribuem para sua eficácia e utilidade:
 
@@ -101,7 +107,7 @@ O projeto apresenta diversos pontos positivos que contribuem para sua eficácia 
 
 - **Armazenamento na Nuvem:** A escolha de armazenar os dados no Amazon S3 e processá-los no Redshift aproveita os benefícios da computação em nuvem, como escalabilidade e segurança. Isso garante um ambiente robusto para manipulação e análise dos dados do Tour de France.
 
-### 3.2 Possíveis Melhorias
+### 4.2 Possíveis Melhorias
 
 Apesar dos pontos positivos, há algumas áreas que podem ser aprimoradas para aumentar a eficiência e qualidade do projeto:
 

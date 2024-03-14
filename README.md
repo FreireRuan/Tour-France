@@ -78,7 +78,7 @@ O processo de construção do dashboard segue a seguinte arquitetura:
 - **type:** Tipo de etapa
 - **winner_id:** Identificador único do vencedor da etapa (chave estrangeira para a dimensão Winners)
 
-### Tabela de Dimensão: Finishers
+#### Tabela de Dimensão: Finishers
 
 - **finisher_id:** Identificador único do finalizador (chave primária)
 - **ano:** Ano da Corrida
